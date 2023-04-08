@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:impervius/main_pages/cart.dart';
 import 'package:impervius/utilities/product_card.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -57,6 +58,9 @@ class _HomeScreenState extends State<HomeScreen>
                     width: 15,
                   ),
                   GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, CartPage.id);
+                    },
                     child: CircleAvatar(
                       backgroundColor: Colors.grey[300],
                       child: const Icon(
@@ -129,24 +133,21 @@ class _HomeScreenState extends State<HomeScreen>
                 indicatorColor: Colors.transparent,
                 tabs: [
                   Container(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
                         color: Colors.grey[300],
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: const Tab(text: 'Featured')),
                   Container(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
                         color: Colors.grey[300],
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: const Tab(text: 'Best-Seller')),
                   Container(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
                         color: Colors.grey[300],
                         borderRadius: BorderRadius.circular(30),

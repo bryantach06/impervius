@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         SignInPage.id: (context) => SignInPage(),
         SignUpPage.id: (context) => SignUpPage(),
         MainHome.id: (context) => MainHome(),
-        ProductPage.id: (context) => ProductPage(),
+        // ProductPage.id: (context) => ProductPage(),
         CartPage.id: (context) => CartPage(),
       },
     );

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:impervius/main_pages/home_screen.dart';
+import 'package:impervius/main_pages/cart.dart';
 import 'package:impervius/main_pages/main_home.dart';
+import 'package:impervius/product_model.dart';
 
 class ProductPage extends StatefulWidget {
-  const ProductPage({Key? key}) : super(key: key);
+  final Product product;
+  const ProductPage({Key? key, required this.product}) : super(key: key);
 
   static String id = 'product_page';
 
@@ -12,6 +14,10 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
+  // final Product product;
+
+  int initialAmount = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,9 +74,9 @@ class _ProductPageState extends State<ProductPage> {
                   child: Container(
                     height: 300,
                     width: 300,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/images/blazer.jpeg'),
+                        image: AssetImage(widget.product.image),
                       ),
                     ),
                   ),
@@ -78,9 +84,9 @@ class _ProductPageState extends State<ProductPage> {
                 const SizedBox(
                   height: 15,
                 ),
-                const Text(
-                  'Beige Waterproof Blazer',
-                  style: TextStyle(
+                Text(
+                  widget.product.name,
+                  style: const TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
                   ),
@@ -88,9 +94,9 @@ class _ProductPageState extends State<ProductPage> {
                 const SizedBox(
                   height: 10,
                 ),
-                const Text(
-                  'Rp 449.000,-',
-                  style: TextStyle(
+                Text(
+                  widget.product.price,
+                  style: const TextStyle(
                     fontSize: 20,
                   ),
                 ),
@@ -104,6 +110,11 @@ class _ProductPageState extends State<ProductPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              initialAmount--;
+                            });
+                          },
                           child: CircleAvatar(
                             backgroundColor: Colors.grey[300],
                             child: const Icon(
@@ -115,14 +126,19 @@ class _ProductPageState extends State<ProductPage> {
                         const SizedBox(
                           width: 15,
                         ),
-                        const Text(
-                          '1',
-                          style: TextStyle(fontSize: 20),
+                        Text(
+                          initialAmount.toString(),
+                          style: const TextStyle(fontSize: 20),
                         ),
                         const SizedBox(
                           width: 15,
                         ),
                         GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              initialAmount++;
+                            });
+                          },
                           child: CircleAvatar(
                             backgroundColor: Colors.grey[300],
                             child: const Icon(
@@ -245,18 +261,18 @@ class _ProductPageState extends State<ProductPage> {
                 const SizedBox(
                   height: 15,
                 ),
-                const Text(
-                  'Beige Waterproof Blazer',
-                  style: TextStyle(
+                Text(
+                  widget.product.name,
+                  style: const TextStyle(
                     fontSize: 25,
                   ),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                const Text(
-                  'Made from our finest silk material, making it the most comfortable blazer on the market. And it is also waterproof!',
-                  style: TextStyle(
+                Text(
+                  widget.product.longDesc,
+                  style: const TextStyle(
                     fontSize: 17,
                   ),
                 ),
@@ -267,7 +283,14 @@ class _ProductPageState extends State<ProductPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const CartPage(),
+                          ),
+                        );
+                      },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
                           const Color(0xff5390cd),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:impervius/main_pages/product_page.dart';
 
+import '../product_model.dart';
+
 class ProductsCard extends StatefulWidget {
   ProductsCard({Key? key}) : super(key: key);
 
@@ -10,52 +12,49 @@ class ProductsCard extends StatefulWidget {
 
 class _ProductsCardState extends State<ProductsCard> {
   int? selectedProductIndex;
-
   bool _isSelected = false;
 
   final List<Map<String, dynamic>> productsMap = [
     {
       'image': 'assets/images/blazer.jpeg',
-      'title': 'Waterproof Blazer',
+      'title': 'Beige Waterproof Blazer',
       'description': 'Women\'s Waterproof Outerwear',
+      'longdesc': 'Made from our finest silk material, making it the most comfortable blazer on the market. And it is also waterproof!',
       'price': 'Rp 449.000,-',
       'destination': ProductPage.id
     },
     {
       'image': 'assets/images/coat2.jpeg',
-      'title': 'Waterproof Coat',
+      'title': 'Brownie Waterproof Coat',
       'description': 'Women\'s Waterproof Outerwear',
-      'price': 'Rp 449.000,-',
+      'longdesc': 'Made from our finest waterproof wool, keeping the formal look while also giving you that proud, fashionable feeling on the go.',
+      'price': 'Rp 1.399.000,-',
       'destination': ProductPage.id
     },
     {
       'image': 'assets/images/jacket2.jpeg',
-      'title': 'Waterproof Jacket',
+      'title': 'Navy Waterproof Jacket',
       'description': 'Men\'s Waterproof Outerwear',
-      'price': 'Rp 449.000,-',
+      'longdesc': 'The most fashion-forward and versatile type of jacket that keeps you warm, stylish and dry on those rainy days.',
+      'price': 'Rp 1.349.000,-',
       'destination': ProductPage.id
     },
     {
-      'image': 'assets/images/blazer.jpeg',
-      'title': 'Waterproof Blazer',
-      'description': 'Women\'s Waterproof Outerwear',
-      'price': 'Rp 449.000,-',
+      'image': 'assets/images/leather3.jpeg',
+      'title': 'Mixed Waterproof Leathers',
+      'description': 'Men\'s Waterproof Outerwear',
+      'longdesc': 'A combination of a hoodie and a leather jacket made from our finest materials. What more could you ask for?',
+      'price': 'Rp 1.499.000,-',
       'destination': ProductPage.id
     },
     {
-      'image': 'assets/images/blazer.jpeg',
-      'title': 'Waterproof Blazer',
-      'description': 'Women\'s Waterproof Outerwear',
-      'price': 'Rp 449.000,-',
+      'image': 'assets/images/leathers.jpg',
+      'title': 'Bruno Waterproof Leathers',
+      'description': 'Men\'s Waterproof Outerwear',
+      'longdesc': 'Made from the best waterproof leather material and keeps you cool and comfy all day without having to worry about your style!',
+      'price': 'Rp 1.349.000,-',
       'destination': ProductPage.id
     },
-    {
-      'image': 'assets/images/blazer.jpeg',
-      'title': 'Waterproof Blazer',
-      'description': 'Women\'s Waterproof Outerwear',
-      'price': 'Rp 449.000,-',
-      'destination': ProductPage.id
-    }
   ];
 
   @override
@@ -68,14 +67,22 @@ class _ProductsCardState extends State<ProductsCard> {
         crossAxisCount: 2,
         childAspectRatio: 0.7,
       ),
-      itemCount: productsMap.length,
+      itemCount: products.length,
       itemBuilder: (BuildContext context, index) {
         return SizedBox(
           height: 500,
           child: GestureDetector(
             onTap: () {
-              Navigator.pushNamed(
-                  context, '${productsMap.elementAt(index)['destination']}');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProductPage(
+                    product: Product.fromJson(
+                      productsMap.elementAt(index),
+                    ),
+                  ),
+                ),
+              );
             },
             child: Padding(
               padding:
@@ -110,7 +117,7 @@ class _ProductsCardState extends State<ProductsCard> {
                         textAlign: TextAlign.start,
                         style: const TextStyle(
                           fontFamily: 'Quicksand',
-                          fontSize: 15,
+                          fontSize: 12,
                         ),
                       ),
                       Text(
@@ -118,11 +125,11 @@ class _ProductsCardState extends State<ProductsCard> {
                         textAlign: TextAlign.start,
                         style: const TextStyle(
                           fontFamily: 'Quicksand',
-                          fontSize: 12,
+                          fontSize: 10,
                           color: Colors.black54,
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -131,7 +138,7 @@ class _ProductsCardState extends State<ProductsCard> {
                             textAlign: TextAlign.start,
                             style: const TextStyle(
                               fontFamily: 'Quicksand',
-                              fontSize: 15,
+                              // fontSize: 15,
                             ),
                           ),
                           GestureDetector(

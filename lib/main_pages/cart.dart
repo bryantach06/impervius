@@ -106,48 +106,6 @@ class _CartPageState extends State<CartPage> {
                       ),
                     ),
                   ),
-                  // Card(
-                  //   shape: RoundedRectangleBorder(
-                  //     borderRadius: BorderRadius.circular(15),
-                  //   ),
-                  //   child: Padding(
-                  //     padding: const EdgeInsets.all(10),
-                  //     child: ListTile(
-                  //       leading: Container(
-                  //         height: 80,
-                  //         width: 50,
-                  //         decoration: const BoxDecoration(
-                  //           image: DecorationImage(
-                  //             image: AssetImage('assets/images/leather3.jpeg'),
-                  //           ),
-                  //         ),
-                  //       ),
-                  //       title: const Text('Mixed Waterproof Leathers'),
-                  //       subtitle: const Text('Size : XL\nRp 1.499.000,-'),
-                  //     ),
-                  //   ),
-                  // ),
-                  // Card(
-                  //   shape: RoundedRectangleBorder(
-                  //     borderRadius: BorderRadius.circular(15),
-                  //   ),
-                  //   child: Padding(
-                  //     padding: const EdgeInsets.all(10),
-                  //     child: ListTile(
-                  //       leading: Container(
-                  //         height: 80,
-                  //         width: 50,
-                  //         decoration: const BoxDecoration(
-                  //           image: DecorationImage(
-                  //             image: AssetImage('assets/images/leather3.jpeg'),
-                  //           ),
-                  //         ),
-                  //       ),
-                  //       title: const Text('Mixed Waterproof Leathers'),
-                  //       subtitle: const Text('Size : XL\nRp 1.499.000,-'),
-                  //     ),
-                  //   ),
-                  // ),
                 ],
               ),
             ),

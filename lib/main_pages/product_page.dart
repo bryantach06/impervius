@@ -3,6 +3,8 @@ import 'package:impervius/main_pages/cart.dart';
 import 'package:impervius/main_pages/main_home.dart';
 import 'package:impervius/product_model.dart';
 
+import 'customize.dart';
+
 class ProductPage extends StatefulWidget {
   final Product product;
   const ProductPage({Key? key, required this.product}) : super(key: key);
@@ -150,13 +152,15 @@ class _ProductPageState extends State<ProductPage> {
                       ],
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, CustomPage.id);
+                      },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
                           const Color(0xff5390cd),
                         ),
                         padding:
-                            const MaterialStatePropertyAll(EdgeInsets.all(10)),
+                            const MaterialStatePropertyAll(EdgeInsets.all(15)),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(

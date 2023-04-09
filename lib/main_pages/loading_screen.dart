@@ -12,11 +12,11 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
-      splash: Lottie.asset('assets/loading.json'),
+      splash: Lottie.asset('assets/pay.json'),
       nextScreen: const ThankyouPage(),
       splashIconSize: 250,
       backgroundColor: Colors.white,
-      duration: 3000,
+      duration: 1000,
       pageTransitionType: PageTransitionType.fade,
       animationDuration: const Duration(milliseconds: 1000),
     );

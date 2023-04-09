@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:impervius/initial_pages/get_started_page.dart';
 import 'package:impervius/main_pages/cart.dart';
 import 'package:impervius/main_pages/checkout.dart';
+import 'package:impervius/main_pages/customize.dart';
 import 'package:impervius/main_pages/home_screen.dart';
 import 'package:impervius/main_pages/loading_screen.dart';
 import 'package:impervius/main_pages/main_home.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         LoadingScreen.id: (context) => const LoadingScreen(),
         ThankyouPage.id: (context) => const ThankyouPage(),
         MyOrders.id: (context) => const MyOrders(),
+        CustomPage.id: (context) => const CustomPage(),
       },
     );
   }

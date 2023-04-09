@@ -15,7 +15,6 @@ class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
       body: SafeArea(
         child: Column(
           children: [
@@ -153,8 +152,8 @@ class _CartPageState extends State<CartPage> {
               ),
             ),
             const Spacer(),
+            const Divider(thickness: 1,),
             Container(
-                decoration: const BoxDecoration(color: Colors.white),
                 child: Padding(
                   padding: const EdgeInsets.all(25),
                   child: Column(

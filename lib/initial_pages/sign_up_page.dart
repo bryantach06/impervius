@@ -128,6 +128,7 @@ class SignUpPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: TextFormField(
+                        obscureText: true,
                         controller: passwordController,
                         decoration: const InputDecoration(
                             labelText: 'Password', border: InputBorder.none),
@@ -145,6 +146,7 @@ class SignUpPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: TextFormField(
+                        obscureText: true,
                         controller: confirmPasswordController,
                         decoration: const InputDecoration(
                             labelText: 'Confirm Password',

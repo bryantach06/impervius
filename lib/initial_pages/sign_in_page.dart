@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:impervius/initial_pages/sign_up_page.dart';
-
-import '../main_pages/home_screen.dart';
 import '../main_pages/main_home.dart';
 
 class SignInPage extends StatelessWidget {
@@ -89,6 +87,7 @@ class SignInPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(25),
                     ),
                     child: TextFormField(
+                      obscureText: true,
                       controller: passwordController,
                       decoration: const InputDecoration(
                           labelText: 'Password', border: InputBorder.none),

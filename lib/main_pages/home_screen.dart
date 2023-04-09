@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:impervius/main_pages/cart.dart';
+import 'package:impervius/main_pages/my_orders.dart';
 import 'package:impervius/utilities/product_card.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -46,6 +47,9 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                   const Spacer(),
                   GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, MyOrders.id);
+                    },
                     child: CircleAvatar(
                       backgroundColor: Colors.grey[300],
                       child: const Icon(

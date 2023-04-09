@@ -3,10 +3,12 @@ import 'package:impervius/initial_pages/get_started_page.dart';
 import 'package:impervius/main_pages/cart.dart';
 import 'package:impervius/main_pages/checkout.dart';
 import 'package:impervius/main_pages/home_screen.dart';
+import 'package:impervius/main_pages/loading_screen.dart';
 import 'package:impervius/main_pages/main_home.dart';
 import 'package:impervius/initial_pages/sign_in_page.dart';
 import 'package:impervius/initial_pages/sign_up_page.dart';
 import 'package:impervius/initial_pages/splash_screen.dart';
+import 'package:impervius/main_pages/my_orders.dart';
 import 'package:impervius/main_pages/thankyou.dart';
 
 void main() {
@@ -30,7 +32,9 @@ class MyApp extends StatelessWidget {
         MainHome.id: (context) => const MainHome(),
         CartPage.id: (context) => const CartPage(),
         CheckoutPage.id: (context) => const CheckoutPage(),
+        LoadingScreen.id: (context) => const LoadingScreen(),
         ThankyouPage.id: (context) => const ThankyouPage(),
+        MyOrders.id: (context) => const MyOrders(),
       },
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:impervius/main_pages/cart.dart';
-import 'package:impervius/main_pages/thankyou.dart';
+import 'package:impervius/main_pages/loading_screen.dart';
 
 enum PaymentMethod { cod, credit }
 
@@ -14,6 +14,7 @@ class CheckoutPage extends StatefulWidget {
 }
 
 PaymentMethod? _paymentMethod = PaymentMethod.cod;
+var isLoading = false;
 
 class _CheckoutPageState extends State<CheckoutPage> {
   @override
@@ -47,7 +48,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       ),
                       const Text(
                         'Checkout',
-                        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
@@ -67,8 +69,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: const Padding(
-                      padding:
-                          EdgeInsets.only(left: 5, top: 10, bottom: 10, right: 10),
+                      padding: EdgeInsets.only(
+                          left: 5, top: 10, bottom: 10, right: 10),
                       child: ListTile(
                         title: Text(
                           'Address 1',
@@ -145,66 +147,93 @@ class _CheckoutPageState extends State<CheckoutPage> {
             ),
             const Spacer(),
             Container(
-                decoration: const BoxDecoration(color: Colors.white),
-                child: Padding(
-                  padding: const EdgeInsets.all(25),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text('Sub-total :', style: TextStyle(fontSize: 15),),
-                          Text('Rp 3.347.000,-', style: TextStyle(fontSize: 15),),
-                        ],
-                      ),
-                      const SizedBox(height: 15,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text('Shipping fees :', style: TextStyle(fontSize: 15),),
-                          Text('Rp 50.000,-', style: TextStyle(fontSize: 15),),
-                        ],
-                      ),
-                      const SizedBox(height: 15,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text('Total Payment :', style: TextStyle(fontSize: 15),),
-                          Text('Rp 3.397.000,-', style: TextStyle(fontSize: 15),),
-                        ],
-                      ),
-                      const SizedBox(height: 30,),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, ThankyouPage.id);
-                        },
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                            const Color(0xff5390cd),
-                          ),
-                          padding:
-                          const MaterialStatePropertyAll(EdgeInsets.all(15)),
-                          shape:
-                          MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
+              decoration: const BoxDecoration(color: Colors.white),
+              child: Padding(
+                padding: const EdgeInsets.all(25),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text(
+                          'Sub-total :',
+                          style: TextStyle(fontSize: 15),
+                        ),
+                        Text(
+                          'Rp 3.347.000,-',
+                          style: TextStyle(fontSize: 15),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text(
+                          'Shipping fees :',
+                          style: TextStyle(fontSize: 15),
+                        ),
+                        Text(
+                          'Rp 50.000,-',
+                          style: TextStyle(fontSize: 15),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text(
+                          'Total Payment :',
+                          style: TextStyle(fontSize: 15),
+                        ),
+                        Text(
+                          'Rp 3.397.000,-',
+                          style: TextStyle(fontSize: 15),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, LoadingScreen.id);
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(
+                          const Color(0xff5390cd),
+                        ),
+                        padding:
+                            const MaterialStatePropertyAll(EdgeInsets.all(15)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
                           ),
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              'Make Payment',
-                              style: TextStyle(fontSize: 25, color: Colors.white),
-                            ),
-                            Icon(Icons.arrow_forward_ios, color: Colors.white,)
-                          ],
-                        ),
                       ),
-                    ],
-                  ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Text(
+                            'Make Payment',
+                            style: TextStyle(fontSize: 25, color: Colors.white),
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.white,
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
+              ),
             ),
           ],
         ),

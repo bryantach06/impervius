@@ -2,15 +2,18 @@
 
 Tugas besar Pengembangan Aplikasi Mobile
 
-## Getting Started
+Mobile Flutter shopping app with minimum functionality only for display purposes.
+App theme : A company that sells high-quality waterproof clothing.
+App features : 
+-. Splash Screen
+-. Login & Sign Up
+-. Home screen with Google Navigation Bar for bottom nav and a Gridview.builder for product display
+-. Wishlist screen
+-. Inbox screen
+-. Profile screen
+-. Product detail page
+-. Cart page
+-. Checkout page
+-. Order tracking page
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Further development to be determined.

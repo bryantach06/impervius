@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:impervius/initial_pages/sign_in_page.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:impervius/initial_pages/sign_up_page.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({Key? key}) : super(key: key);
@@ -13,8 +15,7 @@ class GetStartedPage extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/get_started.jpg'),
-            colorFilter:
-            ColorFilter.mode(Colors.black54, BlendMode.darken),
+            colorFilter: ColorFilter.mode(Colors.black54, BlendMode.darken),
             fit: BoxFit.cover,
           ),
         ),
@@ -27,25 +28,34 @@ class GetStartedPage extends StatelessWidget {
                 radius: 100,
                 child: Image.asset('assets/images/logo_impervius.png'),
               ),
-              const SizedBox(height: 25,),
-              const Text(
+              const SizedBox(
+                height: 25,
+              ),
+              Text(
                 'IMPERVIUS',
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                style: GoogleFonts.montserrat(
+                  textStyle: const TextStyle(
+                    fontSize: 40,
+                    color: Colors.white,
+                  ),
                 ),
               ),
-              const SizedBox(height: 25,),
-              const Text(
-                'Your First Ever\nWaterproof StreetWear',
+              const SizedBox(
+                height: 25,
+              ),
+              Text(
+                'Your First Ever\nWaterproof Streetwear',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.white,
+                style: GoogleFonts.raleway(
+                  textStyle: const TextStyle(
+                    fontSize: 25,
+                    color: Colors.white,
+                  ),
                 ),
               ),
-              const SizedBox(height: 25,),
+              const SizedBox(
+                height: 25,
+              ),
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, SignInPage.id);
@@ -54,34 +64,50 @@ class GetStartedPage extends StatelessWidget {
                   backgroundColor: MaterialStateProperty.all(
                     Colors.white,
                   ),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.all(10),
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
                   child: Text(
                     'Start Shopping',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
+                    style: GoogleFonts.raleway(
+                      textStyle: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    "Don't have an account?",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
+                  Text("Don't have an account? ",
+                      style: GoogleFonts.quicksand(
+                        textStyle: const TextStyle(
+                          color: Colors.white,
+                        ),
+                      )),
                   GestureDetector(
-                    child: const Text(
+                    child: Text(
                       'Sign Up Here!',
-                      style: TextStyle(color: Colors.blue),
+                      style: GoogleFonts.quicksand(
+                        textStyle: const TextStyle(
+                          color: Colors.blue,
+                        ),
+                      ),
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, SignUpPage.id);
+                    },
                   ),
                 ],
               )

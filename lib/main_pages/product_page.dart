@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:impervius/main_pages/cart.dart';
 import 'package:impervius/main_pages/main_home.dart';
 import 'package:impervius/product_model.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'customize.dart';
 
 class ProductPage extends StatefulWidget {
   final Product product;
+
   const ProductPage({Key? key, required this.product}) : super(key: key);
 
   static String id = 'product_page';
@@ -88,9 +89,11 @@ class _ProductPageState extends State<ProductPage> {
                 ),
                 Text(
                   widget.product.name,
-                  style: const TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
+                  style: GoogleFonts.raleway(
+                    textStyle: const TextStyle(
+                      fontSize: 25,
+                      // fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -98,12 +101,22 @@ class _ProductPageState extends State<ProductPage> {
                 ),
                 Text(
                   widget.product.price,
-                  style: const TextStyle(
-                    fontSize: 20,
+                  style: GoogleFonts.raleway(
+                    textStyle: const TextStyle(
+                      fontSize: 20,
+                    ),
                   ),
                 ),
                 const SizedBox(
                   height: 15,
+                ),
+                Text(
+                    widget.product.longDesc,
+                    style: GoogleFonts.quicksand(
+                      textStyle: const TextStyle(
+                        fontSize: 15,
+                      ),
+                    )
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -118,20 +131,22 @@ class _ProductPageState extends State<ProductPage> {
                             });
                           },
                           child: CircleAvatar(
+                            radius: 15,
                             backgroundColor: Colors.grey[300],
                             child: const Icon(
                               Icons.remove,
                               color: Colors.black,
+                              size: 20,
                             ),
                           ),
                         ),
                         const SizedBox(
                           width: 15,
                         ),
-                        Text(
-                          initialAmount.toString(),
-                          style: const TextStyle(fontSize: 20),
-                        ),
+                        Text(initialAmount.toString(),
+                            style: GoogleFonts.raleway(
+                              textStyle: const TextStyle(fontSize: 20),
+                            )),
                         const SizedBox(
                           width: 15,
                         ),
@@ -142,10 +157,12 @@ class _ProductPageState extends State<ProductPage> {
                             });
                           },
                           child: CircleAvatar(
+                            radius: 15,
                             backgroundColor: Colors.grey[300],
                             child: const Icon(
                               Icons.add,
                               color: Colors.black,
+                              size: 20,
                             ),
                           ),
                         ),
@@ -164,13 +181,18 @@ class _ProductPageState extends State<ProductPage> {
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(30),
                           ),
                         ),
                       ),
-                      child: const Text(
+                      child: Text(
                         'Customize',
-                        style: TextStyle(fontSize: 25, color: Colors.white),
+                        style: GoogleFonts.raleway(
+                          textStyle: const TextStyle(
+                            fontSize: 25,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -178,9 +200,11 @@ class _ProductPageState extends State<ProductPage> {
                 const SizedBox(
                   height: 15,
                 ),
-                const Text(
+                Text(
                   'Select Size',
-                  style: TextStyle(fontSize: 20),
+                  style: GoogleFonts.quicksand(
+                    textStyle: const TextStyle(fontSize: 20),
+                  ),
                 ),
                 const SizedBox(
                   height: 15,
@@ -191,97 +215,107 @@ class _ProductPageState extends State<ProductPage> {
                     GestureDetector(
                       child: CircleAvatar(
                         backgroundColor: Colors.grey[300],
-                        child: const Text(
+                        child: Text(
                           'XS',
-                          style: TextStyle(color: Colors.black),
+                          style: GoogleFonts.quicksand(
+                            textStyle: const TextStyle(color: Colors.black),
+                          ),
                         ),
                       ),
                     ),
                     GestureDetector(
                       child: CircleAvatar(
                         backgroundColor: Colors.grey[300],
-                        child: const Text(
+                        child: Text(
                           'S',
-                          style: TextStyle(color: Colors.black),
+                          style: GoogleFonts.quicksand(
+                            textStyle: const TextStyle(color: Colors.black),
+                          ),
                         ),
                       ),
                     ),
                     GestureDetector(
                       child: CircleAvatar(
                         backgroundColor: Colors.grey[300],
-                        child: const Text(
+                        child: Text(
                           'M',
-                          style: TextStyle(color: Colors.black),
+                          style: GoogleFonts.quicksand(
+                            textStyle: const TextStyle(color: Colors.black),
+                          ),
                         ),
                       ),
                     ),
                     GestureDetector(
                       child: CircleAvatar(
                         backgroundColor: Colors.grey[300],
-                        child: const Text(
+                        child: Text(
                           'L',
-                          style: TextStyle(color: Colors.black),
+                          style: GoogleFonts.quicksand(
+                            textStyle: const TextStyle(color: Colors.black),
+                          ),
                         ),
                       ),
                     ),
                     GestureDetector(
                       child: CircleAvatar(
                         backgroundColor: Colors.grey[300],
-                        child: const Text(
+                        child: Text(
                           'XL',
-                          style: TextStyle(color: Colors.black),
+                          style: GoogleFonts.quicksand(
+                            textStyle: const TextStyle(color: Colors.black),
+                          ),
                         ),
                       ),
                     ),
                     GestureDetector(
                       child: CircleAvatar(
                         backgroundColor: Colors.grey[300],
-                        child: const Text(
+                        child: Text(
                           '2XL',
-                          style: TextStyle(color: Colors.black),
+                          style: GoogleFonts.quicksand(
+                            textStyle: const TextStyle(color: Colors.black),
+                          ),
                         ),
                       ),
                     ),
                     GestureDetector(
                       child: CircleAvatar(
                         backgroundColor: Colors.grey[300],
-                        child: const Text(
+                        child: Text(
                           '3XL',
-                          style: TextStyle(color: Colors.black),
+                          style: GoogleFonts.quicksand(
+                            textStyle: const TextStyle(color: Colors.black),
+                          ),
                         ),
                       ),
                     ),
                     GestureDetector(
                       child: CircleAvatar(
                         backgroundColor: Colors.grey[300],
-                        child: const Text(
+                        child: Text(
                           '4XL',
-                          style: TextStyle(color: Colors.black),
+                          style: GoogleFonts.quicksand(
+                            textStyle: const TextStyle(color: Colors.black),
+                          ),
                         ),
                       ),
                     ),
                   ],
                 ),
+                // const SizedBox(
+                //   height: 15,
+                // ),
+                // Text(
+                //   widget.product.name,
+                //   style: GoogleFonts.raleway(
+                //     textStyle: const TextStyle(
+                //       fontSize: 20,
+                //       fontWeight: FontWeight.bold,
+                //     ),
+                //   )
+                // ),
                 const SizedBox(
-                  height: 15,
-                ),
-                Text(
-                  widget.product.name,
-                  style: const TextStyle(
-                    fontSize: 25,
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  widget.product.longDesc,
-                  style: const TextStyle(
-                    fontSize: 17,
-                  ),
-                ),
-                const SizedBox(
-                  height: 15,
+                  height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -304,17 +338,21 @@ class _ProductPageState extends State<ProductPage> {
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(30),
                           ),
                         ),
                       ),
-                      child: const Text(
+                      child: Text(
                         'Add to Cart',
-                        style: TextStyle(fontSize: 25, color: Colors.white),
+                        style: GoogleFonts.raleway(
+                          textStyle: const TextStyle(fontSize: 25, color: Colors.white),
+                        ),
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, CartPage.id);
+                      },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
                           const Color(0xff5390cd),
@@ -324,13 +362,15 @@ class _ProductPageState extends State<ProductPage> {
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(30),
                           ),
                         ),
                       ),
-                      child: const Text(
+                      child: Text(
                         'Buy Now',
-                        style: TextStyle(fontSize: 25, color: Colors.white),
+                        style: GoogleFonts.raleway(
+                          textStyle: const TextStyle(fontSize: 25, color: Colors.white),
+                        ),
                       ),
                     ),
                   ],

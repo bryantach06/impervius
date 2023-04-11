@@ -16,7 +16,7 @@ class LoadingScreen extends StatelessWidget {
       nextScreen: const ThankyouPage(),
       splashIconSize: 250,
       backgroundColor: Colors.white,
-      duration: 1000,
+      duration: 945,
       pageTransitionType: PageTransitionType.fade,
       animationDuration: const Duration(milliseconds: 1000),
     );

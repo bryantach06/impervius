@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:impervius/main_pages/main_home.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ThankyouPage extends StatelessWidget {
   const ThankyouPage({Key? key}) : super(key: key);
@@ -14,16 +15,29 @@ class ThankyouPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'Thank you for your purchase!',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                style: GoogleFonts.raleway(
+                  textStyle: const TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-              const SizedBox(height: 15,),
-              const Text(
+              const SizedBox(
+                height: 15,
+              ),
+              Text(
                 'Your order will be on your doorstep soon!',
-                style: TextStyle(fontSize: 17),
+                style: GoogleFonts.raleway(
+                  textStyle: const TextStyle(
+                    fontSize: 17,
+                  ),
+                ),
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, MainHome.id);
@@ -32,19 +46,20 @@ class ThankyouPage extends StatelessWidget {
                   backgroundColor: MaterialStateProperty.all(
                     const Color(0xff5390cd),
                   ),
-                  padding:
-                  const MaterialStatePropertyAll(EdgeInsets.all(15)),
-                  shape:
-                  MaterialStateProperty.all<RoundedRectangleBorder>(
+                  padding: const MaterialStatePropertyAll(EdgeInsets.all(15)),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(30),
                     ),
                   ),
                 ),
-                child: const Text(
-                  'Back to Home',
-                  style: TextStyle(fontSize: 25, color: Colors.white),
-                ),
+                child: Text('Back to Home',
+                    style: GoogleFonts.raleway(
+                      textStyle: const TextStyle(
+                        fontSize: 25,
+                        color: Colors.white,
+                      ),
+                    )),
               ),
             ],
           ),

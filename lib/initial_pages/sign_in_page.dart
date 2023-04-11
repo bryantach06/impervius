@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:impervius/initial_pages/sign_up_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../main_pages/main_home.dart';
 
 class SignInPage extends StatelessWidget {
@@ -9,7 +10,6 @@ class SignInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
     final TextEditingController emailController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
@@ -54,13 +54,15 @@ class SignInPage extends StatelessWidget {
                     child: Image.asset('assets/images/logo_impervius.png'),
                   ),
                   const SizedBox(
-                    height: 15,
+                    height: 35,
                   ),
-                  const Text(
-                    'Sign In',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
-                  ),
+                  Text('Sign In',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.montserrat(
+                        textStyle: const TextStyle(
+                          fontSize: 40,
+                        ),
+                      )),
                   const SizedBox(
                     height: 25,
                   ),
@@ -102,10 +104,12 @@ class SignInPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: GestureDetector(
-                        child: const Text(
-                          'Forgot password?',
-                          style: TextStyle(color: Colors.blue),
-                        ),
+                        child: Text('Forgot password?',
+                            style: GoogleFonts.quicksand(
+                              textStyle: const TextStyle(
+                                color: Colors.blue,
+                              ),
+                            )),
                         onTap: () {},
                       ),
                     ),
@@ -145,29 +149,36 @@ class SignInPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    child: const Padding(
-                      padding: EdgeInsets.all(10),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
                       child: Text(
                         'Sign In',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
+                        style: GoogleFonts.raleway(
+                          textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 20,),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
+                      Text(
                         "Don't have an account? ",
+                        style: GoogleFonts.quicksand(),
                       ),
                       GestureDetector(
-                        child: const Text(
-                          'Sign Up Here!',
-                          style: TextStyle(color: Colors.blue),
-                        ),
+                        child: Text('Sign Up Here!',
+                            style: GoogleFonts.quicksand(
+                              textStyle: const TextStyle(
+                                color: Colors.blue,
+                              ),
+                            )),
                         onTap: () {
                           Navigator.pushNamed(context, SignUpPage.id);
                         },

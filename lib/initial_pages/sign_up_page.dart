@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:impervius/initial_pages/sign_in_page.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import '../main_pages/home_screen.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -77,11 +77,15 @@ class SignUpPage extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                    const Text(
+                    Text(
                       'Sign Up',
                       textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+                      style: GoogleFonts.montserrat(
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 40,
+                        ),
+                      ),
                     ),
                     const SizedBox(
                       height: 25,
@@ -181,17 +185,19 @@ class SignUpPage extends StatelessWidget {
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(30),
                           ),
                         ),
                       ),
-                      child: const Padding(
-                        padding: EdgeInsets.all(10),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10),
                         child: Text(
                           'Sign Up',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 25,
+                          style: GoogleFonts.raleway(
+                            textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                            ),
                           ),
                         ),
                       ),
@@ -202,13 +208,18 @@ class SignUpPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
+                        Text(
                           "Already have an account? ",
+                          style: GoogleFonts.quicksand(),
                         ),
                         GestureDetector(
-                          child: const Text(
+                          child: Text(
                             'Sign In Here!',
-                            style: TextStyle(color: Colors.blue),
+                            style: GoogleFonts.quicksand(
+                              textStyle: const TextStyle(
+                                color: Colors.blue,
+                              ),
+                            ),
                           ),
                           onTap: () {
                             Navigator.pushNamed(context, SignInPage.id);

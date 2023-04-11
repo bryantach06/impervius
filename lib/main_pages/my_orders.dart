@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'main_home.dart';
 
 class MyOrders extends StatelessWidget {
@@ -32,42 +32,82 @@ class MyOrders extends StatelessWidget {
                       const Text('Home'),
                     ],
                   ),
-                  const Text('My Orders', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+                  Text(
+                    'My Orders',
+                    style: GoogleFonts.montserrat(
+                      textStyle: const TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                 ],
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.only(
-                      left: 5, top: 10, bottom: 10, right: 10),
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 5,
+                    top: 10,
+                    bottom: 10,
+                    right: 10,
+                  ),
                   child: ListTile(
                     title: Text(
                       'Order #0017483',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: GoogleFonts.raleway(
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                     subtitle: Text(
-                        'Mixed Waterproof Leathers\nSize : L\nTrack your order here!'),
+                      'Mixed Waterproof Leathers\nSize : L\nTrack your order here!',
+                      style: GoogleFonts.quicksand(
+                        textStyle: const TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.only(
-                      left: 5, top: 10, bottom: 10, right: 10),
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 5,
+                    top: 10,
+                    bottom: 10,
+                    right: 10,
+                  ),
                   child: ListTile(
                     title: Text(
                       'Order #0017484',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: GoogleFonts.raleway(
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                     subtitle: Text(
-                        'You checked out multiple items in this order!\nTrack them out!'),
+                      'You checked out multiple items in this order!\nTrack them out!',
+                      style: GoogleFonts.quicksand(
+                        textStyle: const TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               )

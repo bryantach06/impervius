@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'main_home.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomPage extends StatefulWidget {
   const CustomPage({Key? key}) : super(key: key);
@@ -70,10 +71,14 @@ class _CustomPageState extends State<CustomPage> {
                         const Text('Home'),
                       ],
                     ),
-                    const Text(
+                    Text(
                       'Customization',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                      style: GoogleFonts.montserrat(
+                        textStyle: const TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -89,10 +94,14 @@ class _CustomPageState extends State<CustomPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
+                        Text(
                           'Color :',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.raleway(
+                            textStyle: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                         DropdownButton(
                           value: _selectedItem,
@@ -124,10 +133,14 @@ class _CustomPageState extends State<CustomPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
+                        Text(
                           'Embroidery :',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.raleway(
+                            textStyle: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                         TextButton(
                           onPressed: _openImagePicker,
@@ -149,10 +162,14 @@ class _CustomPageState extends State<CustomPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
+                        Text(
                           'Material :',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.raleway(
+                            textStyle: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                         DropdownButton(
                           value: _selectedMaterial,
@@ -186,29 +203,41 @@ class _CustomPageState extends State<CustomPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text(
+                            Text(
                               'Sizing',
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
+                              style: GoogleFonts.raleway(
+                                textStyle: const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                             Row(
                               children: [
                                 GestureDetector(
                                   child: CircleAvatar(
                                     backgroundColor: Colors.grey[300],
-                                    child: const Text(
+                                    child: Text(
                                       '.in',
-                                      style: TextStyle(color: Colors.black),
+                                      style: GoogleFonts.quicksand(
+                                        textStyle: const TextStyle(
+                                            color: Colors.black),
+                                      ),
                                     ),
                                   ),
                                 ),
-                                const SizedBox(width: 15,),
+                                const SizedBox(
+                                  width: 15,
+                                ),
                                 GestureDetector(
                                   child: CircleAvatar(
                                     backgroundColor: Colors.grey[300],
-                                    child: const Text(
+                                    child: Text(
                                       'cm',
-                                      style: TextStyle(color: Colors.black),
+                                      style: GoogleFonts.quicksand(
+                                        textStyle: const TextStyle(
+                                            color: Colors.black),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -219,7 +248,12 @@ class _CustomPageState extends State<CustomPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text('Shoulder Width'),
+                            Text(
+                              'Shoulder Width',
+                              style: GoogleFonts.quicksand(
+                                textStyle: const TextStyle(color: Colors.black),
+                              ),
+                            ),
                             Container(
                                 width: 30,
                                 child: Expanded(child: TextFormField())),
@@ -228,7 +262,12 @@ class _CustomPageState extends State<CustomPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text('Chest Circumference'),
+                            Text(
+                              'Chest Circumference',
+                              style: GoogleFonts.quicksand(
+                                textStyle: const TextStyle(color: Colors.black),
+                              ),
+                            ),
                             Container(
                                 width: 30,
                                 child: Expanded(child: TextFormField())),
@@ -237,7 +276,12 @@ class _CustomPageState extends State<CustomPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text('Arm Length'),
+                            Text(
+                              'Arm Length',
+                              style: GoogleFonts.quicksand(
+                                textStyle: const TextStyle(color: Colors.black),
+                              ),
+                            ),
                             Container(
                                 width: 30,
                                 child: Expanded(child: TextFormField())),
@@ -246,7 +290,12 @@ class _CustomPageState extends State<CustomPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text('Waist Circumference'),
+                            Text(
+                              'Waist Circumference',
+                              style: GoogleFonts.quicksand(
+                                textStyle: const TextStyle(color: Colors.black),
+                              ),
+                            ),
                             Container(
                                 width: 30,
                                 child: Expanded(child: TextFormField())),
@@ -279,18 +328,21 @@ class _CustomPageState extends State<CustomPage> {
                     backgroundColor: MaterialStateProperty.all(
                       const Color(0xff5390cd),
                     ),
-                    padding:
-                    const MaterialStatePropertyAll(EdgeInsets.all(15)),
-                    shape:
-                    MaterialStateProperty.all<RoundedRectangleBorder>(
+                    padding: const MaterialStatePropertyAll(EdgeInsets.all(15)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(30),
                       ),
                     ),
                   ),
-                  child: const Text(
+                  child: Text(
                     'Finish',
-                    style: TextStyle(fontSize: 25, color: Colors.white),
+                    style: GoogleFonts.raleway(
+                      textStyle: const TextStyle(
+                        fontSize: 25,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
               ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:impervius/main_pages/product_page.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import '../product_model.dart';
 
 class ProductsCard extends StatefulWidget {
@@ -115,19 +115,23 @@ class _ProductsCardState extends State<ProductsCard> {
                       Text(
                         '${productsMap.elementAt(index)['title']}',
                         textAlign: TextAlign.start,
-                        style: const TextStyle(
-                          fontFamily: 'Quicksand',
-                          fontSize: 12,
-                        ),
+                        style: GoogleFonts.raleway(
+                          textStyle: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
                       ),
+                      const SizedBox(height: 5,),
                       Text(
                         '${productsMap.elementAt(index)['description']}',
                         textAlign: TextAlign.start,
-                        style: const TextStyle(
-                          fontFamily: 'Quicksand',
-                          fontSize: 10,
-                          color: Colors.black54,
-                        ),
+                        style: GoogleFonts.raleway(
+                          textStyle: const TextStyle(
+                            fontSize: 12,
+                            color: Colors.black,
+                          ),
+                        )
                       ),
                       const Spacer(),
                       Row(
@@ -136,10 +140,7 @@ class _ProductsCardState extends State<ProductsCard> {
                           Text(
                             '${productsMap.elementAt(index)['price']}',
                             textAlign: TextAlign.start,
-                            style: const TextStyle(
-                              fontFamily: 'Quicksand',
-                              // fontSize: 15,
-                            ),
+                            style: GoogleFonts.raleway(),
                           ),
                           GestureDetector(
                             child: CircleAvatar(

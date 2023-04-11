@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'cart.dart';
 
 class InboxPage extends StatelessWidget {
@@ -10,13 +10,21 @@ class InboxPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(25),
+          padding: const EdgeInsets.all(25),
           child: Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text('Inbox', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+                  Text(
+                    'Inbox',
+                    style: GoogleFonts.montserrat(
+                      textStyle: const TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                   GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, CartPage.id);
@@ -31,57 +39,93 @@ class InboxPage extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 25,),
+              const SizedBox(
+                height: 25,
+              ),
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.only(
+                child: Padding(
+                  padding: const EdgeInsets.only(
                       left: 5, top: 10, bottom: 10, right: 10),
                   child: ListTile(
                     title: Text(
                       'New Discount Alert!',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: GoogleFonts.raleway(
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                     subtitle: Text(
-                        'You\'re missing out!\nOpen this message to check our latest offers!'),
+                      'You\'re missing out!\nOpen this message to check our latest offers!',
+                      style: GoogleFonts.quicksand(
+                        textStyle: const TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.only(
+                child: Padding(
+                  padding: const EdgeInsets.only(
                       left: 5, top: 10, bottom: 10, right: 10),
                   child: ListTile(
                     title: Text(
                       'New Collections Dropping!',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: GoogleFonts.raleway(
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                     subtitle: Text(
-                        'We are dropping new collections this season!\nOpen this message to check it out!'),
+                      'We are dropping new collections this season!\nOpen this message to check it out!',
+                      style: GoogleFonts.quicksand(
+                        textStyle: const TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.only(
+                child: Padding(
+                  padding: const EdgeInsets.only(
                       left: 5, top: 10, bottom: 10, right: 10),
                   child: ListTile(
                     title: Text(
                       'Checkout Successful!',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: GoogleFonts.raleway(
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                     subtitle: Text(
-                        'Thank you for your purchase.\nYour order will be on your doorstep in no time!'),
+                      'Thank you for your purchase.\nYour order will be on your doorstep in no time!',
+                      style: GoogleFonts.quicksand(
+                        textStyle: const TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:impervius/main_pages/cart.dart';
 import 'package:impervius/main_pages/my_orders.dart';
 import 'package:impervius/utilities/product_card.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -38,16 +39,18 @@ class _HomeScreenState extends State<HomeScreen>
             children: [
               Row(
                 children: [
-                  const Text(
+                  Text(
                     'Welcome back,\nAccount Name',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                    style: GoogleFonts.raleway(
+                      textStyle: const TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   const Spacer(),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       Navigator.pushNamed(context, MyOrders.id);
                     },
                     child: CircleAvatar(
@@ -108,23 +111,24 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Align(
+                child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Waterproof Fashion\nAt the palm of your hands',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                          blurRadius: 10.0,
-                          color: Colors.black,
-                          offset: Offset(2, 2),
+                      'Waterproof Fashion\nAt the palm of your hands',
+                      style: GoogleFonts.montserrat(
+                        textStyle: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          // fontWeight: FontWeight.bold,
+                          shadows: [
+                            Shadow(
+                              blurRadius: 10.0,
+                              color: Colors.black,
+                              offset: Offset(2, 2),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
+                      )),
                 ),
               ),
               TabBar(

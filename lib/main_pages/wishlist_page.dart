@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:impervius/main_pages/product_page.dart';
 import '../product_model.dart';
 import 'cart.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WishlistPage extends StatefulWidget {
   const WishlistPage({Key? key}) : super(key: key);
@@ -20,7 +21,8 @@ class _WishlistPageState extends State<WishlistPage> {
       'image': 'assets/images/blazer.jpeg',
       'title': 'Beige Waterproof Blazer',
       'description': 'Women\'s Waterproof Outerwear',
-      'longdesc': 'Made from our finest silk material, making it the most comfortable blazer on the market. And it is also waterproof!',
+      'longdesc':
+          'Made from our finest silk material, making it the most comfortable blazer on the market. And it is also waterproof!',
       'price': 'Rp 449.000,-',
       'destination': ProductPage.id
     },
@@ -28,7 +30,8 @@ class _WishlistPageState extends State<WishlistPage> {
       'image': 'assets/images/jacket2.jpeg',
       'title': 'Navy Waterproof Jacket',
       'description': 'Men\'s Waterproof Outerwear',
-      'longdesc': 'The most fashion-forward and versatile type of jacket that keeps you warm, stylish and dry on those rainy days.',
+      'longdesc':
+          'The most fashion-forward and versatile type of jacket that keeps you warm, stylish and dry on those rainy days.',
       'price': 'Rp 1.349.000,-',
       'destination': ProductPage.id
     },
@@ -36,7 +39,8 @@ class _WishlistPageState extends State<WishlistPage> {
       'image': 'assets/images/leather3.jpeg',
       'title': 'Mixed Waterproof Leathers',
       'description': 'Men\'s Waterproof Outerwear',
-      'longdesc': 'A combination of a hoodie and a leather jacket made from our finest materials. What more could you ask for?',
+      'longdesc':
+          'A combination of a hoodie and a leather jacket made from our finest materials. What more could you ask for?',
       'price': 'Rp 1.499.000,-',
       'destination': ProductPage.id
     },
@@ -53,7 +57,15 @@ class _WishlistPageState extends State<WishlistPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text('My Wishlist', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+                  Text(
+                    'My Wishlist',
+                    style: GoogleFonts.montserrat(
+                      textStyle: const TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                   GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, CartPage.id);
@@ -68,7 +80,9 @@ class _WishlistPageState extends State<WishlistPage> {
                   ),
                 ],
               ),
-              const SizedBox(height: 25,),
+              const SizedBox(
+                height: 25,
+              ),
               GridView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 scrollDirection: Axis.vertical,
@@ -95,8 +109,8 @@ class _WishlistPageState extends State<WishlistPage> {
                         );
                       },
                       child: Padding(
-                        padding:
-                        const EdgeInsets.symmetric(vertical: 7.5, horizontal: 7.5),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 7.5, horizontal: 7.5),
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
@@ -123,33 +137,34 @@ class _WishlistPageState extends State<WishlistPage> {
                                   height: 10,
                                 ),
                                 Text(
-                                  '${productsMap.elementAt(index)['title']}',
-                                  textAlign: TextAlign.start,
-                                  style: const TextStyle(
-                                    fontFamily: 'Quicksand',
-                                    fontSize: 12,
-                                  ),
+                                    '${productsMap.elementAt(index)['title']}',
+                                    textAlign: TextAlign.start,
+                                    style: GoogleFonts.raleway(
+                                      textStyle: const TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    )
                                 ),
                                 Text(
-                                  '${productsMap.elementAt(index)['description']}',
-                                  textAlign: TextAlign.start,
-                                  style: const TextStyle(
-                                    fontFamily: 'Quicksand',
-                                    fontSize: 10,
-                                    color: Colors.black54,
-                                  ),
+                                    '${productsMap.elementAt(index)['description']}',
+                                    textAlign: TextAlign.start,
+                                    style: GoogleFonts.raleway(
+                                      textStyle: const TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.black,
+                                      ),
+                                    )
                                 ),
                                 const Spacer(),
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       '${productsMap.elementAt(index)['price']}',
                                       textAlign: TextAlign.start,
-                                      style: const TextStyle(
-                                        fontFamily: 'Quicksand',
-                                        // fontSize: 15,
-                                      ),
+                                      style: GoogleFonts.raleway(),
                                     ),
                                     GestureDetector(
                                       child: CircleAvatar(
@@ -159,7 +174,9 @@ class _WishlistPageState extends State<WishlistPage> {
                                           _isSelected
                                               ? Icons.favorite
                                               : Icons.favorite_border,
-                                          color: _isSelected ? Colors.red : Colors.black,
+                                          color: _isSelected
+                                              ? Colors.red
+                                              : Colors.black,
                                           size: 17,
                                         ),
                                       ),

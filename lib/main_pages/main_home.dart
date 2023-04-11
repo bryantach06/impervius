@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:impervius/main_pages/home_screen.dart';
 import 'package:impervius/main_pages/profile_page.dart';
 import 'package:impervius/main_pages/wishlist_page.dart';
-
 import 'inbox_page.dart';
 
 class MainHome extends StatefulWidget {

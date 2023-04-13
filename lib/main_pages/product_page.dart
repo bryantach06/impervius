@@ -3,6 +3,7 @@ import 'package:impervius/main_pages/cart.dart';
 import 'package:impervius/main_pages/main_home.dart';
 import 'package:impervius/product_model.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../utilities/size_button.dart';
 import 'customize.dart';
 
 class ProductPage extends StatefulWidget {
@@ -17,12 +18,31 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
-  // final Product product;
+
+  bool isSelected = false;
+
+  List<bool> _selectedSizes = [false, false, false, false, false, false, false, false];
+
+  void _onSizeButtonPressed(String size) {
+    setState(() {
+      // Update the selected size
+      int index = _selectedSizes.indexOf(true);
+      if (index != -1) {
+        _selectedSizes[index] = false;
+      }
+      int selectedIndex = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'].indexOf(size);
+      if (selectedIndex != -1) {
+        _selectedSizes[selectedIndex] = true;
+      }
+    });
+  }
 
   int initialAmount = 1;
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -46,11 +66,16 @@ class _ProductPageState extends State<ProductPage> {
                     Row(
                       children: [
                         GestureDetector(
+                          onTap: (){
+                            setState(() {
+                              isSelected = !isSelected;
+                            });
+                          },
                           child: CircleAvatar(
                             backgroundColor: Colors.grey[300],
-                            child: const Icon(
-                              Icons.favorite_border,
-                              color: Colors.black,
+                            child: Icon(
+                              isSelected ? Icons.favorite : Icons.favorite_border,
+                              color: isSelected ? Colors.red : Colors.black,
                             ),
                           ),
                         ),
@@ -58,6 +83,9 @@ class _ProductPageState extends State<ProductPage> {
                           width: 15,
                         ),
                         GestureDetector(
+                          onTap: (){
+                            Navigator.pushNamed(context, CartPage.id);
+                          },
                           child: CircleAvatar(
                             backgroundColor: Colors.grey[300],
                             child: const Icon(
@@ -78,6 +106,7 @@ class _ProductPageState extends State<ProductPage> {
                     height: 300,
                     width: 300,
                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
                       image: DecorationImage(
                         image: AssetImage(widget.product.image),
                       ),
@@ -212,108 +241,48 @@ class _ProductPageState extends State<ProductPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    GestureDetector(
-                      child: CircleAvatar(
-                        backgroundColor: Colors.grey[300],
-                        child: Text(
-                          'XS',
-                          style: GoogleFonts.quicksand(
-                            textStyle: const TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
+                    SizeButton(
+                      size: 'XS',
+                      onPressed: _onSizeButtonPressed,
+                      isSelected: _selectedSizes[0],
                     ),
-                    GestureDetector(
-                      child: CircleAvatar(
-                        backgroundColor: Colors.grey[300],
-                        child: Text(
-                          'S',
-                          style: GoogleFonts.quicksand(
-                            textStyle: const TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
+                    SizeButton(
+                      size: 'S',
+                      onPressed: _onSizeButtonPressed,
+                      isSelected: _selectedSizes[1],
                     ),
-                    GestureDetector(
-                      child: CircleAvatar(
-                        backgroundColor: Colors.grey[300],
-                        child: Text(
-                          'M',
-                          style: GoogleFonts.quicksand(
-                            textStyle: const TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
+                    SizeButton(
+                      size: 'M',
+                      onPressed: _onSizeButtonPressed,
+                      isSelected: _selectedSizes[2],
                     ),
-                    GestureDetector(
-                      child: CircleAvatar(
-                        backgroundColor: Colors.grey[300],
-                        child: Text(
-                          'L',
-                          style: GoogleFonts.quicksand(
-                            textStyle: const TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
+                    SizeButton(
+                      size: 'L',
+                      onPressed: _onSizeButtonPressed,
+                      isSelected: _selectedSizes[3],
                     ),
-                    GestureDetector(
-                      child: CircleAvatar(
-                        backgroundColor: Colors.grey[300],
-                        child: Text(
-                          'XL',
-                          style: GoogleFonts.quicksand(
-                            textStyle: const TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
+                    SizeButton(
+                      size: 'XL',
+                      onPressed: _onSizeButtonPressed,
+                      isSelected: _selectedSizes[4],
                     ),
-                    GestureDetector(
-                      child: CircleAvatar(
-                        backgroundColor: Colors.grey[300],
-                        child: Text(
-                          '2XL',
-                          style: GoogleFonts.quicksand(
-                            textStyle: const TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
+                    SizeButton(
+                      size: '2XL',
+                      onPressed: _onSizeButtonPressed,
+                      isSelected: _selectedSizes[5],
                     ),
-                    GestureDetector(
-                      child: CircleAvatar(
-                        backgroundColor: Colors.grey[300],
-                        child: Text(
-                          '3XL',
-                          style: GoogleFonts.quicksand(
-                            textStyle: const TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
+                    SizeButton(
+                      size: '3XL',
+                      onPressed: _onSizeButtonPressed,
+                      isSelected: _selectedSizes[6],
                     ),
-                    GestureDetector(
-                      child: CircleAvatar(
-                        backgroundColor: Colors.grey[300],
-                        child: Text(
-                          '4XL',
-                          style: GoogleFonts.quicksand(
-                            textStyle: const TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
+                    SizeButton(
+                      size: '4XL',
+                      onPressed: _onSizeButtonPressed,
+                      isSelected: _selectedSizes[7],
                     ),
                   ],
                 ),
-                // const SizedBox(
-                //   height: 15,
-                // ),
-                // Text(
-                //   widget.product.name,
-                //   style: GoogleFonts.raleway(
-                //     textStyle: const TextStyle(
-                //       fontSize: 20,
-                //       fontWeight: FontWeight.bold,
-                //     ),
-                //   )
-                // ),
                 const SizedBox(
                   height: 20,
                 ),

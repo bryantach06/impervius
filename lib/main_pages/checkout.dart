@@ -187,13 +187,13 @@ class _CheckoutPageState extends State<CheckoutPage> {
                             left: 5, top: 10, bottom: 10, right: 10),
                         child: ListTile(
                           title: Text(
-                            'Credit Card 2',
+                            'Bank Transfer',
                             style: GoogleFonts.raleway(),
                           ),
-                          subtitle: Text(
-                            '0000-0000-0002',
-                            style: GoogleFonts.quicksand(),
-                          ),
+                          // subtitle: Text(
+                          //   '0000-0000-0002',
+                          //   style: GoogleFonts.quicksand(),
+                          // ),
                           leading: Radio<PaymentMethod>(
                             value: PaymentMethod.credit2,
                             groupValue: _paymentMethod,

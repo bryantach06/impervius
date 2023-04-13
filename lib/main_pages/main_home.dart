@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:impervius/main_pages/home_screen.dart';
 import 'package:impervius/main_pages/profile_page.dart';
@@ -14,11 +15,10 @@ class MainHome extends StatefulWidget {
 }
 
 class _MainHomeState extends State<MainHome> {
-
   int _selectedIndex = 0;
 
-  void _navigateBottomBar (int index) {
-    setState((){
+  void _navigateBottomBar(int index) {
+    setState(() {
       _selectedIndex = (index);
     });
   }
@@ -33,17 +33,32 @@ class _MainHomeState extends State<MainHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: CurvedNavigationBar(
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Wishlist'),
-          BottomNavigationBarItem(icon: Icon(Icons.mail), label: 'Inbox'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          Icon(
+            Icons.home,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.favorite,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.mail,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.person,
+            color: Colors.white,
+          ),
         ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black45,
+        index: _selectedIndex,
+        color: const Color(0xffbdbdbd),
+        backgroundColor: const Color(0xfffafafa),
+        buttonBackgroundColor: Colors.black,
         onTap: _navigateBottomBar,
+        height: 55,
+        animationDuration: const Duration(milliseconds: 450),
       ),
       body: _pages[_selectedIndex],
     );

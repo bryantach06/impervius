@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:impervius/main_pages/cart.dart';
 import 'package:impervius/main_pages/my_orders.dart';
-import 'package:impervius/utilities/product_card.dart';
+import 'package:impervius/utilities/featured.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen>
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(25),
+          padding: const EdgeInsets.only(left: 25, top: 25, right: 25),
           child: Column(
             children: [
               Row(
@@ -139,6 +139,7 @@ class _HomeScreenState extends State<HomeScreen>
                 unselectedLabelColor: Colors.black38,
                 indicatorSize: TabBarIndicatorSize.label,
                 indicatorColor: Colors.transparent,
+                // tabs: tabList,
                 tabs: [
                   Container(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -166,9 +167,9 @@ class _HomeScreenState extends State<HomeScreen>
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
-                    children: [
-                      ProductsCard(),
-                      const SizedBox(
+                    children: const [
+                      FeaturedProductsTab(),
+                      SizedBox(
                         height: 30,
                       ),
                     ],

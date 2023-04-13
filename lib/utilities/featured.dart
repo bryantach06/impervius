@@ -3,14 +3,14 @@ import 'package:impervius/main_pages/product_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../product_model.dart';
 
-class ProductsCard extends StatefulWidget {
-  ProductsCard({Key? key}) : super(key: key);
+class FeaturedProductsTab extends StatefulWidget {
+  const FeaturedProductsTab({Key? key}) : super(key: key);
 
   @override
-  State<ProductsCard> createState() => _ProductsCardState();
+  State<FeaturedProductsTab> createState() => _FeaturedProductsTabState();
 }
 
-class _ProductsCardState extends State<ProductsCard> {
+class _FeaturedProductsTabState extends State<FeaturedProductsTab> {
   int? selectedProductIndex;
   bool _isSelected = false;
 

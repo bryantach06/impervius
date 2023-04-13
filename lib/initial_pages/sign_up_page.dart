@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:impervius/initial_pages/sign_in_page.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../main_pages/home_screen.dart';
+import 'package:impervius/main_pages/main_home.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -49,7 +49,7 @@ class SignUpPage extends StatelessWidget {
 
     void submitForm() {
       if (formKey.currentState!.validate()) {
-        Navigator.pushNamed(context, HomeScreen.id);
+        Navigator.pushNamed(context, MainHome.id);
         emailController.clear();
         passwordController.clear();
         nameController.clear();
@@ -82,7 +82,6 @@ class SignUpPage extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.montserrat(
                         textStyle: const TextStyle(
-                          fontWeight: FontWeight.bold,
                           fontSize: 40,
                         ),
                       ),

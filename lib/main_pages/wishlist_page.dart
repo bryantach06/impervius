@@ -141,7 +141,7 @@ class _WishlistPageState extends State<WishlistPage> {
                                     textAlign: TextAlign.start,
                                     style: GoogleFonts.raleway(
                                       textStyle: const TextStyle(
-                                        fontSize: 14,
+                                        fontSize: 12,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     )
@@ -151,7 +151,7 @@ class _WishlistPageState extends State<WishlistPage> {
                                     textAlign: TextAlign.start,
                                     style: GoogleFonts.raleway(
                                       textStyle: const TextStyle(
-                                        fontSize: 12,
+                                        fontSize: 10,
                                         color: Colors.black,
                                       ),
                                     )

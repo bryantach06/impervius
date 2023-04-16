@@ -117,7 +117,7 @@ class _FeaturedProductsTabState extends State<FeaturedProductsTab> {
                         textAlign: TextAlign.start,
                         style: GoogleFonts.raleway(
                           textStyle: const TextStyle(
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: FontWeight.bold,
                           ),
                         )
@@ -128,7 +128,7 @@ class _FeaturedProductsTabState extends State<FeaturedProductsTab> {
                         textAlign: TextAlign.start,
                         style: GoogleFonts.raleway(
                           textStyle: const TextStyle(
-                            fontSize: 12,
+                            fontSize: 10,
                             color: Colors.black,
                           ),
                         )
